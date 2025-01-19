@@ -56,7 +56,7 @@ const menuItems: {id: number, title: string, description: string, price: string}
     },
     {
         id: 5,
-        title: 'Յակի մակի',
+        title: 'Սյակե մակի',
 		price: '2300 դրամ',
 		description: `(բրինձ, սաղմոն, նորի)`
     },
