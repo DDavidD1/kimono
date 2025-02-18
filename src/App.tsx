@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from './assets/images/logo.png';
 
 const menuItems: {id: number, title: string, description: string, price: string}[] = [
@@ -321,41 +321,46 @@ const menuItems: {id: number, title: string, description: string, price: string}
 ];
 
 const App: React.FC = () => {
-    return (
-        <div className="wrapper">
-            <div className="logo">
-                <img src={Logo} alt="logo" />
-            </div>
-            <h2 className="page_title">Մենյու</h2>
-            <div className="menu_additional_info">
-                <p>*Կատարելով գնումներ կստանաք նվեր պիցցա՝</p>
-                <ul>
-                    <li>10000-ից մինչև 15000 դրամի դեպքում կստանաք նվեր պիցցա "Մարգարիտա"</li>
-                    <li>15000-ից մինչև 20000 դրամի դեպքում կստանաք նվեր պիցցա "Ժուլիեն"</li>
-                    <li>20000 դրամ և ավելիի դեպքում կստանաք նվեր պիցցա "4 համ"</li>
-                </ul>
-            </div>
-            <div className="menu_item_list">
-                {
-                    menuItems.map(item => (
-                        <div
-                            key={`menu_item_${item.id}`}
-                            className="menu_item"
-                        >
-                            <div className="menu_item_image">
-                                <img src={`/menu_item_images/${item.id}.jpg`} alt="" />
-                            </div>
-                            <div className="menu_item_title_box">
-                                <h3 className="menu_item_title">{item.title}</h3>
-                                <span className="menu_item_price">{item.price}</span>
-                            </div>
-                            <div className="menu_item_description" dangerouslySetInnerHTML={{__html: item.description}} />
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
-    );
+    useEffect(() => {
+        window.location.href = "https://kimono.am";
+    }, []);
+    // return (
+    //     <div className="wrapper">
+    //         <div className="logo">
+    //             <img src={Logo} alt="logo" />
+    //         </div>
+    //         <h2 className="page_title">Մենյու</h2>
+    //         <div className="menu_additional_info">
+    //             <p>*Կատարելով գնումներ կստանաք նվեր պիցցա՝</p>
+    //             <ul>
+    //                 <li>10000-ից մինչև 15000 դրամի դեպքում կստանաք նվեր պիցցա "Մարգարիտա"</li>
+    //                 <li>15000-ից մինչև 20000 դրամի դեպքում կստանաք նվեր պիցցա "Ժուլիեն"</li>
+    //                 <li>20000 դրամ և ավելիի դեպքում կստանաք նվեր պիցցա "4 համ"</li>
+    //             </ul>
+    //         </div>
+    //         <div className="menu_item_list">
+    //             {
+    //                 menuItems.map(item => (
+    //                     <div
+    //                         key={`menu_item_${item.id}`}
+    //                         className="menu_item"
+    //                     >
+    //                         <div className="menu_item_image">
+    //                             <img src={`/menu_item_images/${item.id}.jpg`} alt="" />
+    //                         </div>
+    //                         <div className="menu_item_title_box">
+    //                             <h3 className="menu_item_title">{item.title}</h3>
+    //                             <span className="menu_item_price">{item.price}</span>
+    //                         </div>
+    //                         <div className="menu_item_description" dangerouslySetInnerHTML={{__html: item.description}} />
+    //                     </div>
+    //                 ))
+    //             }
+    //         </div>
+    //     </div>
+    // );
+
+    return <></>;
 };
 
 export default App;
